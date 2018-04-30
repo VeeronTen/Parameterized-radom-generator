@@ -1,5 +1,6 @@
-#include "../inc/coeffgenerator.hpp"
 #include <iostream>
+
+#include "coeffgenerator.hpp"
 
 CoeffGenerator::CoeffGenerator() : coefficients(), sum(0) {
     srand (time(NULL));

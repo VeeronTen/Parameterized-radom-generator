@@ -1,4 +1,4 @@
-#include "../inc/beautyprinter.hpp"
+#include "beautyprinter.hpp"
 
 void BeautyPrinter::print(std::vector<short> toPrint) {
     toPrint = normilize(toPrint);

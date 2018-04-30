@@ -1,9 +1,10 @@
 //#include <stdio.h>
 #include <iostream>
 
-#include "inc/beautyprinter.hpp"
-#include "inc/coeffgenerator.hpp"
-#include "inc/linearconfiguration.hpp"
+#include "lib/beautyPrinter/inc/beautyprinter.hpp"
+
+#include "coeffgenerator.hpp"
+#include "linearconfiguration.hpp"
 
 #define GENERATE_COUNT 100
 #define GENERATE_ITEMS 10

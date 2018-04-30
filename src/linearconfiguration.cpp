@@ -1,6 +1,7 @@
-#include "../inc/linearconfiguration.hpp"
-#include "../inc/cashedconfiguration.hpp"
 #include <iostream>
+
+#include "linearconfiguration.hpp"
+#include "cashedconfiguration.hpp"
 
 LinearConfiguration::LinearConfiguration() {}
 
