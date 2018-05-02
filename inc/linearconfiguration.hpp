@@ -1,12 +1,17 @@
 #pragma once
 
-#include "cashedconfiguration.hpp"
+#include "configuration.hpp"
 
-class LinearConfiguration : public CashedConfiguration {
+class LinearConfiguration : public Configuration {
     public:
         LinearConfiguration();
         LinearConfiguration(short firstCoeff, short lastCoeff, short coeffCount);
         virtual ~LinearConfiguration();
 
-        virtual std::vector<short> getCoefficients() override;
+        virtual Coefficients getCoefficients() override;
+ 
+    private:
+        short firstCoeff;
+        short lastCoeff;
+        short coeffCount;
 };

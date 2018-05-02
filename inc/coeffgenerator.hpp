@@ -4,17 +4,16 @@
 #include <time.h> 
 #include <stdlib.h>  
 
+#include "coefficients.hpp"
+
 class CoeffGenerator {
     public:
         CoeffGenerator();
-        CoeffGenerator(std::vector<short> coefficients);
+        CoeffGenerator(Coefficients coefficients);
         virtual ~ CoeffGenerator();
 
-        void setCoefficients(std::vector<short> coefficients);
         short geterate();
+        
     private:
-        std::vector<short> coefficients;
-        int sum;
-
-        void computeSum();
+        Coefficients coefficients;
 };

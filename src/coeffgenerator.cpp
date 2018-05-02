@@ -1,37 +1,23 @@
-#include <iostream>
-
 #include "coeffgenerator.hpp"
 
-CoeffGenerator::CoeffGenerator() : coefficients(), sum(0) {
+CoeffGenerator::CoeffGenerator() : coefficients() {
     srand (time(NULL));
 }
 
-CoeffGenerator::CoeffGenerator(std::vector<short> coefficients) : CoeffGenerator(){
-    setCoefficients(coefficients);
-    computeSum();
+CoeffGenerator::CoeffGenerator(Coefficients coefficients) : CoeffGenerator() {
+    this->coefficients = coefficients;
 }
 
 CoeffGenerator::~CoeffGenerator() {}
 
-void CoeffGenerator::setCoefficients(std::vector<short> coefficients) {
-    this->coefficients = coefficients;
-}
-
 short CoeffGenerator::geterate() {
-    short rawRandom = rand() % this->sum;
+    short rawRandom = rand() % coefficients.sum();
     for (int i = 0; i < coefficients.size(); i++) {
-        if(rawRandom < coefficients[i]) {
+        if(rawRandom < coefficients.get(i)) {
             return i;
         } else {
-            rawRandom-=coefficients[i];
+            rawRandom-=coefficients.get(i);
         }
     }
     return -1;
-}
-
-void CoeffGenerator::computeSum() {
-    this->sum = 0;
-    for (short& value: coefficients) {
-        this->sum+=value;
-    }
 }
