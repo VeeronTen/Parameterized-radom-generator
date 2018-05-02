@@ -8,9 +8,9 @@ class Coefficients {
         virtual ~Coefficients();
 
         void add(short coefficient);
-        short get(short index);
-        short size();
-        int sum();
+        short get(short index) const;
+        short size() const;
+        int sum() const;
 
     private:
         std::vector<short> coefficients;

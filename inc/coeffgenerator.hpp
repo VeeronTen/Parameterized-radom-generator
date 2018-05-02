@@ -3,17 +3,18 @@
 #include <vector>
 #include <time.h> 
 #include <stdlib.h>  
+#include <memory>
 
-#include "coefficients.hpp"
+#include "configuration.hpp"
 
 class CoeffGenerator {
     public:
         CoeffGenerator();
-        CoeffGenerator(Coefficients coefficients);
+        CoeffGenerator(std::unique_ptr<Configuration> configuration);
         virtual ~ CoeffGenerator();
 
         short geterate();
         
     private:
-        Coefficients coefficients;
+        std::unique_ptr<Configuration> configuration;
 };

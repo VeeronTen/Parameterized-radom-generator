@@ -1,16 +1,17 @@
 #include "coeffgenerator.hpp"
 
-CoeffGenerator::CoeffGenerator() : coefficients() {
+CoeffGenerator::CoeffGenerator() : configuration(nullptr) {
     srand (time(NULL));
 }
 
-CoeffGenerator::CoeffGenerator(Coefficients coefficients) : CoeffGenerator() {
-    this->coefficients = coefficients;
+CoeffGenerator::CoeffGenerator(std::unique_ptr<Configuration> configuration) : CoeffGenerator() {
+    this->configuration = std::move(configuration);
 }
 
 CoeffGenerator::~CoeffGenerator() {}
 
 short CoeffGenerator::geterate() {
+    const Coefficients coefficients = configuration->getCoefficients();
     short rawRandom = rand() % coefficients.sum();
     for (int i = 0; i < coefficients.size(); i++) {
         if(rawRandom < coefficients.get(i)) {
