@@ -11,10 +11,11 @@ include_directories(${PROJECT_SOURCE_DIR}/inc)
 add_executable(test.out 
         test.cpp 
         src/coeffgenerator.cpp
-        src/linearconfiguration.cpp
+        src/configurations/configuration.cpp
+        src/configurations/linearconfiguration.cpp
         src/coefficients.cpp
 )
 
 target_link_libraries (test.out beautyPrinter)
-
+# does not work
 install(TARGETS test.out DESTINATION ${PROJECT_SOURCE_DIR}/bin)
