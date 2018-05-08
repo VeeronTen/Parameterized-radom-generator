@@ -1,4 +1,4 @@
-#include "configurations/linearconfiguration.hpp"
+#include "configurations/linear_configuration.hpp"
 
 LinearConfiguration::LinearConfiguration() {}
 

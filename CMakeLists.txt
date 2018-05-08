@@ -6,16 +6,20 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_subdirectory(lib/beautyPrinter)
 
+include_directories(${PROJECT_SOURCE_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/inc)
 
-add_executable(test.out 
-        test.cpp 
+
+add_executable(linear_test.out 
+        tests/test.cpp
         src/coeffgenerator.cpp
-        src/configurations/configuration.cpp
-        src/configurations/linearconfiguration.cpp
         src/coefficients.cpp
+        src/configurations/configuration.cpp
+
+        tests/linear_test.cpp 
+        src/configurations/linear_configuration.cpp    
 )
 
-target_link_libraries (test.out beautyPrinter)
+target_link_libraries (linear_test.out beautyPrinter)
 # does not work
-install(TARGETS test.out DESTINATION ${PROJECT_SOURCE_DIR}/bin)
+install(TARGETS linear_test.out DESTINATION ${PROJECT_SOURCE_DIR}/bin)
