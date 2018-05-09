@@ -7,5 +7,5 @@ public:
     LinearConfiguration();
     virtual ~LinearConfiguration();
 
-    LinearConfiguration* way_1(short firstCoeff, short lastCoeff, short coeffCount);
+    LinearConfiguration* way_1(unsigned short firstCoeff, unsigned short lastCoeff, unsigned short coeffCount);
 };

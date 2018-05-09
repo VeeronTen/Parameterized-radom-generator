@@ -4,7 +4,7 @@ LinearConfiguration::LinearConfiguration() {}
 
 LinearConfiguration::~LinearConfiguration() {}
 
-LinearConfiguration* LinearConfiguration::way_1(short firstCoeff, short lastCoeff, short coeffCount) {
+LinearConfiguration* LinearConfiguration::way_1(unsigned short firstCoeff, unsigned short lastCoeff, unsigned short coeffCount) {
     const float coeffDiff = lastCoeff - firstCoeff;
     const float deltaBetweenCoeffs = coeffDiff / (coeffCount - 1);
 

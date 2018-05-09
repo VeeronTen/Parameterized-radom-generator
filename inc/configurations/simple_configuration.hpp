@@ -9,5 +9,5 @@ public:
     SimpleConfiguration();
     virtual ~SimpleConfiguration();
 
-    SimpleConfiguration* way_1(std::vector<short> coefficients);
+    SimpleConfiguration* way_1(std::vector<unsigned short> coefficients);
 };

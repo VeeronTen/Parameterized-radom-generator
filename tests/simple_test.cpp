@@ -6,7 +6,7 @@
 #define GENERATE_COUNT 100
 
 int main( int argc, const char* argv[] ) {
-    std::vector<short> coefficients;
+    std::vector<unsigned short> coefficients;
     coefficients.push_back(10);
     coefficients.push_back(0);
     coefficients.push_back(100);

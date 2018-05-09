@@ -4,23 +4,26 @@ Coefficients::Coefficients() : coefficients() {}
 
 Coefficients::~Coefficients() {}
 
-void Coefficients::add(short coefficient) {
-    if (coefficient > -1) {
-        coefficients.push_back(coefficient);
+void Coefficients::add(unsigned short coefficient) {
+    coefficients.push_back(coefficient);
+}
+
+short Coefficients::get(unsigned short index) const {
+    if (index < coefficients.size()) {
+        return coefficients.at(index);
+    } else {
+        return 0;
     }
+    
 }
 
-short Coefficients::get(short index) const {
-    return coefficients[index];
-}
-
-short Coefficients::size() const {
+unsigned short Coefficients::size() const {
     return coefficients.size();
 }
 
-int Coefficients::sum() const {
+unsigned int Coefficients::sum() const {
     int result = 0;
-    for (const short& value: coefficients) {
+    for (const unsigned short& value: coefficients) {
         result+=value;
     }
     return result;
