@@ -5,7 +5,7 @@ Coefficients::Coefficients() : coefficients() {}
 Coefficients::~Coefficients() {}
 
 void Coefficients::add(short coefficient) {
-    if (coefficient > 0) {
+    if (coefficient > -1) {
         coefficients.push_back(coefficient);
     }
 }

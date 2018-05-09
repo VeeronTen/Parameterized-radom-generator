@@ -9,7 +9,6 @@ add_subdirectory(lib/beautyPrinter)
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/inc)
 
-
 add_executable(linear_test.out 
         tests/test.cpp
         src/coeffgenerator.cpp
@@ -20,6 +19,19 @@ add_executable(linear_test.out
         src/configurations/linear_configuration.cpp    
 )
 
+add_executable(simple_test.out 
+        tests/test.cpp
+        src/coeffgenerator.cpp
+        src/coefficients.cpp
+        src/configurations/configuration.cpp
+
+        tests/simple_test.cpp 
+        src/configurations/simple_configuration.cpp    
+)
+
 target_link_libraries (linear_test.out beautyPrinter)
+target_link_libraries (simple_test.out beautyPrinter)
+
 # does not work
 install(TARGETS linear_test.out DESTINATION ${PROJECT_SOURCE_DIR}/bin)
+install(TARGETS simple_test.out DESTINATION ${PROJECT_SOURCE_DIR}/bin)
